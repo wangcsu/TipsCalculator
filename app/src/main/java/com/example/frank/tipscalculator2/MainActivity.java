@@ -28,6 +28,8 @@ public class MainActivity extends ActionBarActivity {
         percentSB = (SeekBar)findViewById(R.id.percentBar);
         percentText = (EditText) findViewById(R.id.percentNum);
 
+        //handles seekbar
+
         percentSB.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -49,6 +51,8 @@ public class MainActivity extends ActionBarActivity {
         btnMinus = (Button) findViewById(R.id.minusBtn);
         btnAdd = (Button) findViewById(R.id.addBtn);
 
+        //implement add button and minus button
+
         btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +70,8 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
+    //Button on click listener
+
     public void showPopup(View view){
         final EditText subtotal = (EditText) findViewById(R.id.subTotal);
         final EditText tipPercent = (EditText) findViewById(R.id.percentNum);
@@ -76,27 +82,36 @@ public class MainActivity extends ActionBarActivity {
         String split;
         double tipAmnt, totalAmnt, splitTotal;
 
-        if (subtotalString == null){
+        //handle the situation when no input to subtotal
+
+        if (subtotalString.equalsIgnoreCase("")){
             percent = "0.00";
             total = "0.00";
             subtotalString = "0.00";
             split = "N/A";
         }else {
-            if (percent == null){
+
+            //handle the situation when no input to tips percentage
+
+            if (percent.equalsIgnoreCase("")){
                 tipAmnt = 0.00;
                 percent = String.valueOf(tipAmnt);
                 totalAmnt = tipAmnt + Double.valueOf(subtotalString);
                 totalAmnt = (double)Math.round(totalAmnt*100)/100;
                 total = String.valueOf(totalAmnt);
 
+                //handle the situation if split bills into negative numbers
+
                 if (numOfBills<=0){
-                    splitTotal = totalAmnt;
                     split = "N/A";
                 }else {
                     splitTotal = (double)Math.round(totalAmnt/numOfBills*100)/100;
                     split = String.valueOf(splitTotal);
                 }
             }else {
+
+                //handle the normal situation
+
                 tipAmnt = Double.valueOf(subtotalString) * Double.valueOf(percent)/100;
                 tipAmnt = (double)Math.round(tipAmnt*100)/100;
                 percent = String.valueOf(tipAmnt);
@@ -105,7 +120,6 @@ public class MainActivity extends ActionBarActivity {
                 total = String.valueOf(totalAmnt);
 
                 if (numOfBills<=0){
-                    splitTotal = totalAmnt;
                     split = "N/A";
                 }else {
                     splitTotal = (double)Math.round(totalAmnt/numOfBills*100)/100;
@@ -113,6 +127,8 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         }
+
+        //Start a popup window to show the result
 
         LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = layoutInflater.inflate(R.layout.popup_menu, null);
@@ -138,7 +154,7 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        popupWindow.showAtLocation((Button)findViewById(R.id.showPop), Gravity.CENTER,0,0);
+        popupWindow.showAtLocation(findViewById(R.id.showPop), Gravity.CENTER,0,0);
 
     }
 

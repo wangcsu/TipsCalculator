@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#ffdedc4f">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tips Calculator"
+        android:id="@+id/appName"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold|italic"
+        android:background="#ffdedc4f"
+        android:textSize="40dp"
+        android:textColor="#ff13585a"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Subtotal    $"
+        android:id="@+id/textView"
+        android:layout_marginTop="60dp"
+        android:textStyle="bold"
+        android:textColor="#ff13585a"
+        android:layout_below="@+id/appName"
+        android:layout_toLeftOf="@+id/subTotal"
+        android:layout_toStartOf="@+id/subTotal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number|numberDecimal"
+        android:ems="10"
+        android:id="@+id/subTotal"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignLeft="@+id/showPop"
+        android:layout_alignStart="@+id/showPop"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#ff13585a"
+        android:width="150dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Select Percentage"
+        android:id="@+id/textView2"
+        android:layout_marginTop="55dp"
+        android:textColor="#ff13585a"
+        android:textStyle="bold"
+        android:layout_below="@+id/subTotal"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/percentBar"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:max="50" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/showPop"
+        android:layout_marginBottom="33dp"
+        android:layout_marginTop="20dp"
+        android:background="#fffd891b"
+        android:textColor="#ff13585a"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="showPopup" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/percentNum"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toLeftOf="@+id/textView3"
+        android:layout_toRightOf="@+id/showPop"
+        android:layout_toEndOf="@+id/showPop"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#ff13585a" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textView3"
+        android:textStyle="bold"
+        android:textColor="#ff13585a"
+        android:layout_above="@+id/percentBar"
+        android:layout_alignRight="@+id/subTotal"
+        android:layout_alignEnd="@+id/subTotal"
+        android:layout_marginRight="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Split Bills Into"
+        android:id="@+id/textView4"
+        android:textStyle="bold"
+        android:textColor="#ff13585a"
+        android:layout_below="@+id/percentBar"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="30dp"
+        android:width="150dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/minusBtn"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignRight="@+id/showPop"
+        android:layout_alignEnd="@+id/showPop" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/splitAmnt"
+        android:layout_alignBottom="@+id/minusBtn"
+        android:layout_toRightOf="@+id/minusBtn"
+        android:layout_toEndOf="@+id/minusBtn"
+        android:layout_toLeftOf="@+id/addBtn"
+        android:layout_alignTop="@+id/minusBtn"
+        android:textColor="#ff13585a"
+        android:gravity="center_horizontal|bottom" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/addBtn"
+        android:layout_alignBottom="@+id/splitAmnt"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:textStyle="bold"
+        android:textSize="35dp" />
+
+</RelativeLayout>

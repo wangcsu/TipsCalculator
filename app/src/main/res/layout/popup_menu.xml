@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="#ff88f4c4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guest Check"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="75dp" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <TextView
+            android:id="@+id/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotal        $"
+            android:textStyle="bold|italic"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/subAmnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:id="@+id/tipText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tips               $"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/tipAmnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total              $"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/totalAmnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:id="@+id/eachBill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Each Person $"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/eachAmnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp" />
+    </TableRow>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/dismissBtn"
+        android:text="OK"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="20dp" />
+
+</TableLayout>
